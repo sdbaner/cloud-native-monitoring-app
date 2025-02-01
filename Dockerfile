@@ -1,4 +1,4 @@
-FROM python:3.9-buster
+FROM python:alpine3.20
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ COPY requirements.txt .
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY app.py templates/index.html .
 
 ENV FLASK_RUN_HOST=0.0.0.0
 
